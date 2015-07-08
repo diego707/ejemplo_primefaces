@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <f:view>
+
+
+            <h:form>
+                <h1><h:outputText value="Create/Edit"/></h1>
+                <h:panelGrid columns="2">
+                    
+                    <h:outputLabel value="IdCliente:" for="idCliente" />
+                    <h:inputText id="idClientes" value="#{clientesController.clientes.pkIdCli}" title="IdCliente" required="true" requiredMessage="The Nombre field is required."/>
+                    
+                    <h:outputLabel value="Nombre:" for="nombre" />
+                    <h:inputText id="nombre" value="#{clientesController.clientes.nom}"title="Nombre" required="true" requiredMessage="The Nombre field is required."/>
+                    
+                    <h:outputLabel value="Apellido:" for="apellido" />
+                    <h:inputText id="apellido" value="#{clientesController.clientes.ape}" title="Apellido" required="true" requiredMessage="The Nombre field is required."/>
+                   
+                    <h:outputLabel value="D.N.I:" for="dni" />
+                    <h:inputText id="dni" value="#{clientesController.clientes.dni}" title="D.N.I"/>
+                     
+                    <h:outputLabel value="Tel" for="tel" />
+                    <h:inputText id="tel" value="#{clientesController.clientes.tel}" title="Teléfono" required="true" requiredMessage="The Nombre field is required"/>
+               
+                    <h:outputLabel value="=Ocupación" for="ocupación"/>
+                    <h:inputText id="ocup" value="#{clientesController.clientes.ocup}" title="Ocupación" required="true" requiredMessage="The Nombre field is required"/>
+                </h:panelGrid>
+                <p:commandButton icon="ui-icon-save" value="Guardar"/>
+                <p:commandButton icon="ui-icon-cancel" value="Cancelar" oncomplete="PF('dlgNuevo').hide()" immediate="true"/>
+            </h:form>
+        </f:view>
+
+        <br />
+        <h:link outcome="welcomePrimefaces" value="Primefaces welcome page" />
+    </h:body>
+</html>
+
